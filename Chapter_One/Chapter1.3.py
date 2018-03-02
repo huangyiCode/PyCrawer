@@ -1,5 +1,6 @@
+import cPickle as  pickle
 # coding=utf-8
-
+# IO  and  Serialization
 # Reader
 try:
     # open file
@@ -21,18 +22,18 @@ with open('/Users/Mike/Documents/Android/DBB_RASP的2.5.7/codesign/mapping.txt',
 
 # Write
 
-with open('/Users/Mike/PycharmProjects/PyCrawer/Chapter_One/TestRaederFile', 'w') as fileWrite:
+with open('/Users/Mike/PycharmProjects/PyCrawer/Chapter_One/TestReaderFile', 'w') as fileWrite:
     fileWrite.write('Tom And Jerry')
 
 # Serialization
-import cPickle as  pickle
 
 d = dict(url='http://www.baidu.com', title='BaiDu', content='MainPager')
-f = open('/Users/Mike/PycharmProjects/PyCrawer/Chapter_One/TestRaederFile', 'w')
+f = open('/Users/Mike/PycharmProjects/PyCrawer/Chapter_One/TestReaderFile', 'w')
 pickle.dump(d, f)
 f.close()
 
-f = open('/Users/Mike/PycharmProjects/PyCrawer/Chapter_One/TestRaederFile', 'rb')
+f = open('/Users/Mike/PycharmProjects/PyCrawer/Chapter_One/TestReaderFile', 'rb')
 read = pickle.load(f)
 f.close()
 print(read)
+

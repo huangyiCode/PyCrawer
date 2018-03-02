@@ -1,0 +1,44 @@
+The opening function:
+    if __name__ =='__main__'
+        ...
+
+The import way:
+    1.import *
+    2.import * as [alias]
+    3.from * import (*Sub)
+
+Define a function:
+   def functionName(params):
+       [content]
+
+Use Tyr..finally block:
+   try:
+      [Maybe throw exception code in there]
+   finally:
+      [Must do something]
+
+Use 'with' keyword instead IO code:
+
+     with [Maybe throw exception code in there] as [The return alias]:
+          [Use the return alias to do something (Already contains alias.close())]
+
+Use "print" function:
+     print [content]
+     print('[content]')
+
+Use "for" block:
+   1.iteration content
+    for var_name in [array/string]:
+        [Do something use content]
+   2.iteration index
+    for index in range([number]):
+        [Do something use index]
+
+Use "if" block:
+   if [conditions]:
+      [if content]
+   elif [conditions]:
+      [elif content]
+   else:
+      [else content]
+
