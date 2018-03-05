@@ -1,7 +1,10 @@
+# coding=utf-8
 import cPickle as  pickle
+
 # coding=utf-8
 # IO  and  Serialization
 # Reader
+
 try:
     # open file
     f = open('/Users/Mike/Documents/Android/DBB_RASP的2.5.7/codesign/mapping.txt', 'r')
@@ -36,4 +39,3 @@ f = open('/Users/Mike/PycharmProjects/PyCrawer/Chapter_One/TestReaderFile', 'rb'
 read = pickle.load(f)
 f.close()
 print(read)
-

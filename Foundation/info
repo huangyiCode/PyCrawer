@@ -1,4 +1,4 @@
-The opening function:
+The opening function: (used to imported with model)
     if __name__ =='__main__'
         ...
 
@@ -41,4 +41,35 @@ Use "if" block:
       [elif content]
    else:
       [else content]
+
+Callback function:
+   def function(callback=None):
+       callback('infoMessage')
+
+Use Array:
+  arr=[i for i in range(10)]    --------->  [0,1,2,3,4,6,7,8,9]
+  arr=[0 for i in range(10)]    --------->  [0,0,0,0,0,0,0,0,0]
+  arr=['name'+str(i) for i in range(3)]    --------->  ['name0','name1','name2']
+
+How to used Process?
+ 1.use os
+ 2.use multiprocessing
+ 3.use Pool
+
+Communicate between Process:
+ 1.Queue
+ 2.Pipe
+
+How to used Thread?
+ 1.Use threading.Thread to use Thread.
+ 2.Extends thread.Thread to use Thread.
+
+How to make Thread safety?
+  Use threading.RLock()
+       acquire()    start lock
+       release()    release lock
+How to used coroutines(协程)?
+
+
+What difference between Thread and coroutines?
 
