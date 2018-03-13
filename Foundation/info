@@ -14,6 +14,8 @@ Define a function:
 Use Tyr..finally block:
    try:
       [Maybe throw exception code in there]
+   except Exception,e
+      [catch exception]
    finally:
       [Must do something]
 
@@ -69,6 +71,12 @@ How to make Thread safety?
        acquire()    start lock
        release()    release lock
 How to used coroutines(协程)?
+
+introduce:
+    coroutines is use the code logic to switch thread.switch register and context.Actually，coroutines is a single thread.
+  we will to manual switch work space,is  high performance rather than thread.
+use:
+    1.yield   2.gevent
 
 
 What difference between Thread and coroutines?

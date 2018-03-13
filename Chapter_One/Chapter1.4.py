@@ -192,7 +192,7 @@ print '%s ended.' % threading.current_thread().name
 
 # Use RLock
 num = 9
-lock = threading.RLock();
+lock = threading.RLock()
 
 
 class lockThread(threading.Thread):
@@ -203,14 +203,49 @@ class lockThread(threading.Thread):
     def run(self):
         global num
         while num > 1:
-            lock.acquire()
+            # lock.acquire()
             num = num - 1
             print 'This num ------>%s------>%s' % (num, threading.current_thread().name)
             time.sleep(1)
-            lock.release()
+            # lock.release()
 
 
 threading1 = lockThread("lockThread1")
 threading2 = lockThread("lockThread2")
 threading1.start()
 threading2.start()
+threading1.join()
+threading2.join()
+
+print '----------------------------------------------------Line---------------------------------------------------------------------------'
+from gevent import monkey
+
+monkey.patch_all()
+import gevent
+import urllib2
+
+
+def init_start(url):
+    try:
+        response = urllib2.urlopen(url)
+        data = response.read()
+        print 'The response data len %s and url is %s' % (len(data), url)
+    except Exception, e:
+        print e
+    return 'url---->%s----->finish'%(url)
+
+
+urls = ["https://www.baidu.com", "http://blog.csdn.net/baidu_31093133/article/details/51860637",
+        "https://www.baidu.com"]
+# init coroutines tasks
+gevents = [gevent.spawn(init_start, url) for url in urls]
+# start and run coroutines tasks. default is just one thread.
+print 'The task len is %s------->process id id %s' % (len(gevents),os.getpid())
+gevent.joinall(gevents)
+print '----------------------------------------------------Line---------------------------------------------------------------------------'
+# Use gevent poll to run tasks in muit thread.协程Pool对协程的并发做出了控制,只有前两个任务执行结束才会执行第三个任务
+from gevent.pool import Pool
+pool=Pool(2)
+results=pool.map(init_start,urls)
+print results
+

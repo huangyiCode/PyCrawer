@@ -10,6 +10,8 @@ try:
     f = open('/Users/Mike/Documents/Android/DBB_RASP的2.5.7/codesign/mapping.txt', 'r')
     # read file
     print f.read()
+except Exception, e:
+    print e
 finally:
     if f:
         f.close()
