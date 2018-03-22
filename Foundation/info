@@ -79,5 +79,31 @@ use:
     1.yield   2.gevent
 
 
-What difference between Thread and coroutines?
+How to get the default encoding and change it?
+
+   sys.getdefaultencoding()
+   sys.setdefaultencoding()
+
+Get instance type:
+
+   type();
+
+Get String encoding?
+
+  chardet.detect(str)
+
+
+If yo want to de something you can use 'pass' to placeholder.
+
+
+Code annotation:
+
+   def _getDate_(date):
+        '''
+        Get date describe.
+        :param date:XXXXXX
+        :return:XXXXXXX
+        '''
+       return longTime
+
 

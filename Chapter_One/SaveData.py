@@ -15,11 +15,11 @@ names=html.xpath('//ul/li/a/text()')
 urls=html.xpath('//ul/li/a/@href')
 content=[]
 for index in range(len(names)):
-    content.append({"name":names[index],"url":urls[index]})
+    content.append({"name":names[index].encode('utf-8'),"url":urls[index]})
 
 
 # Save data with JSON file.
-with open('daoMu.json','wb') as fileWrite:
+with open('daoMu.json','w') as fileWrite:
      json.dump(content,fp=fileWrite,indent=4)
 
 #Save data with CSV file.
@@ -41,6 +41,8 @@ with open('daoMu.csv','w') as fileWrite:
 
 
 
+# What we can do used python crawer?
+# 1.data analysis 2.user analysis 3.history analysis 4.product analysis
 
 
 
